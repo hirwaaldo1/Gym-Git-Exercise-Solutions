@@ -748,3 +748,78 @@ TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
 $
 ````
 
+### Exercise 2
+
+```` bash
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/home-page-redesign)
+$>>> git checkout main
+    Switched to branch 'main'
+    Your branch is up to date with 'orgin/main'.
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+
+$>>> git add --all
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+
+$>>> git commit -m "feat:content for home"
+    [main 1a69738] feat:content for home
+    1 file changed, 3 insertions(+)    
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+
+$>>> git checkout  ft/home-page-redesign
+    Switched to branch 'ft/home-page-redesign'
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/home-page-redesign)
+
+$>>> git rebase main
+    Successfully rebased and updated refs/heads/ft/home-page-redesign.
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/home-page-redesign)
+
+$>>> git add home.html
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/home-page-redesign)
+
+$>>> git commint -m "feat: adding footer"
+    git: 'commint' is not a git command. See 'git --help'.
+    The most similar command is
+            commit
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/home-page-redesign)
+
+$>>> git commit -m "feat: adding footer"
+    [ft/home-page-redesign a1f36f1] feat: adding footer
+    1 file changed, 3 insertions(+)
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/home-page-redesign)
+
+$>>> git push
+    fatal: The current branch ft/home-page-redesign has no upstream branch.
+    To push the current branch and set the remote as upstream, use
+        git push --set-upstream orgin ft/home-page-redesign
+    To have this happen automatically for branches without a tracking
+    upstream, see 'push.autoSetupRemote' in 'git help config'.
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/home-page-redesign)
+
+$>>>  git push --set-upstream orgin ft/home-page-redesign
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (21/21), 2.17 KiB | 222.00 KiB/s, done.
+Total 21 (delta 11), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (11/11), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/hirwaaldo1/git-exercises/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/hirwaaldo1/git-exercises.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+branch 'ft/home-page-redesign' set up to track 'orgin/ft/home-page-redesign'.
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/home-page-redesign)
+$ git checkbox ft/faq-page
+git: 'checkbox' is not a git command. See 'git --help'.
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/home-page-redesign)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+Your branch is up to date with 'orgin/ft/faq-page'.
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$
+````
