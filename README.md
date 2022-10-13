@@ -823,3 +823,55 @@ Your branch is up to date with 'orgin/ft/faq-page'.
 TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
 $
 ````
+
+
+## Bundle 4
+
+### Exercise 1
+```` bash
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+$>>> git remote add git-copy https://github.com/hirwaaldo1/git-exercises-clone.git
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+$>>> git remote
+git-copy
+orgin
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+
+$>>> git add home.html
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+
+$>>> git commit -m "feat:add nav on home page"
+[main 6772353] feat:add nav on home page
+ 1 file changed, 3 insertions(+)
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+
+$>>> git push origin
+    fatal: 'origin' does not appear to be a git repository
+    fatal: Could not read from remote repository.
+    Please make sure you have the correct access rights
+    and the repository exists.
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+$>>> git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 307 bytes | 307.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/hirwaaldo1/git-exercises.git
+   6b35c93..6772353  main -> main
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+
+$>>> git push git-copy
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (18/18), done.
+Writing objects: 100% (20/20), 2.28 KiB | 291.00 KiB/s, done.
+Total 20 (delta 9), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (9/9), done.
+To https://github.com/hirwaaldo1/git-exercises-clone.git
+ * [new branch]      main -> main
+
+````
