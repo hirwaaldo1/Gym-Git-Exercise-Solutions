@@ -386,3 +386,365 @@ $ git add services.html
     TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/service-redesign|MERGING)
 $>>> git commit
     [ft/service-redesign 73f53f6] Merge branch 'main' into ft/service-redesign
+````
+
+
+
+
+## Bundle 3
+
+### Exercise 1
+
+```` bash
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/contact-page)
+$>>>  git cherry-pick ft/team-page
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+On branch ft/contact-page
+You are currently cherry-picking commit 5ef4034.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+nothing to commit, working tree clean
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/contact-page|CHERRY-PICKING)
+$ git cherry-pick 
+usage: git cherry-pick [<options>] <commit-ish>...
+   or: git cherry-pick <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/contact-page)
+$ git add --all
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/contact-page)
+$ git commit -m "feat: add contant page"
+[ft/contact-page 6a8cd1d] feat: add contant page
+ 1 file changed, 12 insertions(+)
+ create mode 100644 contact.html
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/contact-page)
+$ git push
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use   
+
+    git push --set-upstream orgin ft/contact-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+
+$ git revert baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121
+fatal: bad revision 'baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121'
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git log
+commit d1f2715eed3651c83a16c27e8ec181216a80b37c (HEAD -> ft/faq-page, orgin/ft/faq-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:14:10 2022 +0200
+
+    feat:add faq page
+
+commit 6a8cd1dfbea3772250c676e3c32893483364b04a (orgin/ft/contact-page, ft/contact-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:01:38 2022 +0200
+
+    feat: add contant page
+
+commit baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb8412
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 18:50:56 2022 +0200
+
+    feat:adding team page
+
+commit 6b35c93992aec25c979c6b9a5176f0f498b9a10f (orgin/main, main)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 16:01:48 2022 +0200
+
+    feat:add old service
+
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121
+fatal: bad revision 'baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121'
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121 -f
+fatal: bad revision 'baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121'
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git log
+commit d1f2715eed3651c83a16c27e8ec181216a80b37c (HEAD -> ft/faq-page, orgin/ft/faq-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:14:10 2022 +0200
+
+    feat:add faq page
+
+commit 6a8cd1dfbea3772250c676e3c32893483364b04a (orgin/ft/contact-page, ft/contact-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:01:38 2022 +0200
+
+    feat: add contant page
+
+commit baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb8412
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 18:50:56 2022 +0200
+
+    feat:adding team page
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121
+fatal: bad revision 'baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121'
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121
+fatal: bad revision 'baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121'
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121
+fatal: bad revision 'baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121'
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git log
+commit d1f2715eed3651c83a16c27e8ec181216a80b37c (HEAD -> ft/faq-page, orgin/ft/faq-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:14:10 2022 +0200
+
+    feat:add faq page
+
+commit 6a8cd1dfbea3772250c676e3c32893483364b04a (orgin/ft/contact-page, ft/contact-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:01:38 2022 +0200
+
+    feat: add contant page
+
+commit baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb8412
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 18:50:56 2022 +0200
+
+    feat:adding team page
+
+commit 6b35c93992aec25c979c6b9a5176f0f498b9a10f (orgin/main, main)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 16:01:48 2022 +0200
+
+    feat:add old service
+
+commit de83fc29cf5aee0689ecb364125f8b04d98a2dbc
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+Your branch is up to date with 'orgin/ft/contact-page'.
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/contact-page)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+Your branch is ahead of 'orgin/ft/faq-page' by 1 commit.
+  (use "git push" to publish your local commits)        
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git log
+commit bf1115d7160753c6a575c52398093c9a62e93e51 (HEAD -> ft/faq-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:27:25 2022 +0200
+
+    Revert "feat: add contant page"
+
+    This reverts commit 6a8cd1dfbea3772250c676e3c32893483364b04a.
+
+commit d1f2715eed3651c83a16c27e8ec181216a80b37c (orgin/ft/faq-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:14:10 2022 +0200
+
+    feat:add faq page
+
+commit 6a8cd1dfbea3772250c676e3c32893483364b04a (orgin/ft/contact-page, ft/contact-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:01:38 2022 +0200
+
+    feat: add contant page
+
+commit baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb8412
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 18:50:56 2022 +0200
+
+    feat:adding team page
+
+commit 6b35c93992aec25c979c6b9a5176f0f498b9a10f (orgin/main, main)
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert ft\faq-page baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121
+fatal: bad revision 'ftfaq-page'
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert ft\contact-page baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121~
+fatal: bad revision 'ftcontact-page'
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert ft\contact-page"baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121:
+> 
+> 
+> ^C
+
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121
+fatal: bad revision 'baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb84121'
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git log
+commit bf1115d7160753c6a575c52398093c9a62e93e51 (HEAD -> ft/faq-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:27:25 2022 +0200
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git log
+commit bf1115d7160753c6a575c52398093c9a62e93e51 (HEAD -> ft/faq-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:27:25 2022 +0200
+
+    Revert "feat: add contant page"
+    
+    This reverts commit 6a8cd1dfbea3772250c676e3c32893483364b04a.
+
+commit d1f2715eed3651c83a16c27e8ec181216a80b37c (orgin/ft/faq-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Revert "feat:adding team page"
+Date:   Thu Oct 13 10:14:10 2022 +0200
+
+    feat:add faq page
+
+commit 6a8cd1dfbea3772250c676e3c32893483364b04a (orgin/ft/contact-page, ft/contact-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:01:38 2022 +0200
+
+    feat: add contant page
+
+commit baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb8412
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 18:50:56 2022 +0200
+
+    feat:adding team page
+
+commit 6b35c93992aec25c979c6b9a5176f0f498b9a10f (orgin/main, main)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 16:01:48 2022 +0200
+
+    feat:add old service
+
+commit de83fc29cf5aee0689ecb364125f8b04d98a2dbc
+Merge: 1145a98 8a862f8
+Author: Chrissie <chrissiemhrk@gmail.com>
+Date:   Tue Oct 11 16:43:29 2022 +0200
+
+    Merge pull request #2 from hirwaaldo1/ft/bundle-2
+    
+    add new page service
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git revert baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb8412
+[ft/faq-page 79d53d7] Revert "feat:adding team page"
+ 1 file changed, 12 deletions(-)
+ delete mode 100644 team.html
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+Your branch is up to date with 'orgin/ft/contact-page'.
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/contact-page)
+$ git log
+commit 6a8cd1dfbea3772250c676e3c32893483364b04a (HEAD -> ft/contact-page, orgin/ft/contact-page)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Thu Oct 13 10:01:38 2022 +0200
+
+    feat: add contant page
+
+commit baaf8fd0d7b9c9b6af5b7dec0a2d3993ebeb8412
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 18:50:56 2022 +0200
+
+    feat:adding team page
+
+commit 6b35c93992aec25c979c6b9a5176f0f498b9a10f (orgin/main, main)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Wed Oct 12 16:01:48 2022 +0200
+
+    feat:add old service
+
+commit de83fc29cf5aee0689ecb364125f8b04d98a2dbc
+Merge: 1145a98 8a862f8
+Author: Chrissie <chrissiemhrk@gmail.com>
+Date:   Tue Oct 11 16:43:29 2022 +0200
+
+    Merge pull request #2 from hirwaaldo1/ft/bundle-2
+
+    add new page service
+
+commit 8a862f8ee304d26ff6f0744aef94e88de1a1f8e9 (orgin/ft/bundle-2, ft/bundle-2)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Tue Oct 11 14:38:17 2022 +0200
+
+    bundle-2 execres-1
+
+commit 77fc96df0bd83ebeb364e9bac932926e7f890357 (orgin/dev, dev)
+Author: hirwaaldo1 <hirwaaldo1@gmail.com>
+Date:   Mon Oct 10 17:17:42 2022 +0200
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/contact-page)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+Your branch is ahead of 'orgin/ft/faq-page' by 2 commits.
+  (use "git push" to publish your local commits)
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git add --all
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git commit -m 'fix:contact page '
+[ft/faq-page 099ca96] fix:contact page
+ 1 file changed, 12 insertions(+)
+ create mode 100644 contact.html
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 683 bytes | 227.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0        
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/hirwaaldo1/git-exercises.git
+   d1f2715..099ca96  ft/faq-page -> ft/faq-page
+
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/faq-page)
+$
+````
+
