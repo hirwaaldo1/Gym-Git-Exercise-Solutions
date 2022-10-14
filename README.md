@@ -875,3 +875,80 @@ To https://github.com/hirwaaldo1/git-exercises-clone.git
  * [new branch]      main -> main
 
 ````
+
+### Exercise 2
+```` bash
+heGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/footer)
+$>>> git checkout -b ft/footer
+    fatal: a branch named 'ft/footer' already exists
+    TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/footer)
+
+$>>> git add --all
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/footer)
+
+$>>> git commit -m "feat:Add footer page"
+[ft/footer 5ff809a] feat:Add footer page        
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/footer)
+
+$>>> git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.    
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done. 
+Writing objects: 100% (6/6), 728 bytes | 121.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/hirwaaldo1/git-exercises/pull/new/ft/footer
+remote:
+To https://github.com/hirwaaldo1/git-exercises.git
+ * [new branch]      ft/footer -> ft/footer
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/footer)
+
+$>>> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'orgin/main'.
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (main)
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/squashing)
+
+$>>> git merge --squash ft/footer
+Updating 6772353..5ff809a
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+ create mode 100644 footer.html
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/squashing)
+
+$>>> git commit -m "footer changes squashing"
+[ft/squashing 459f859] footer changes squashing
+ 1 file changed, 12 insertions(+)
+ create mode 100644 footer.html
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/squashing)
+
+$>>> git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+    git push --set-upstream origin ft/squashing
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+TheGym@DESKTOP-9BO2974 MINGW64 ~/Desktop/Git/bundle1 (ft/squashing)
+
+$>>> git push --set-upstream origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 463 bytes | 92.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/hirwaaldo1/git-exercises/pull/new/ft/squashing
+remote:
+To https://github.com/hirwaaldo1/git-exercises.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+````
